@@ -1,4 +1,171 @@
-*{
-    padding: 0;
+:root {
+    --bg-light: #f6f6f8;
+    --white: #ffffff;
+    --text-main: #000000;
+    --text-muted: #b0b0b0;
+    --accent: #4e5df8;
+}
+
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #d6d6d6; /* Outer background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+/* Left Panel Styling */
+.left-panel {
+    padding: 40px;
+    background: var(--white);
+}
+
+.search-container input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+}
+
+.current-weather {
+    margin-top: 50px;
+}
+
+.current-weather img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+#temperature {
+    font-size: 80px;
+    font-weight: 300;
+}
+
+.day-time {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+}
+
+.location-box {
+    margin-top: 40px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('city-bg.jpg');
+    background-size: cover;
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+}
+
+/* Right Panel Styling */
+.right-panel {
+    background: var(--bg-light);
+    padding: 40px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tabs button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    margin-right: 20px;
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+.tabs button.active {
+    color: var(--text-main);
+    border-bottom: 2px solid black;
+}
+
+.unit-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.unit-toggle button {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.unit-toggle button.active {
+    background: black;
+    color: white;
+}
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 20px;
+}
+
+.card h4 {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.status {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
 }
